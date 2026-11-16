@@ -1,0 +1,54 @@
+class GameCharacter:
+    def __init__(self, name):
+        self._name = name
+        self._health = 100
+        self._mana = 50
+        self._level = 1
+#the name property to get the character's name
+    @property
+    def name(self):
+        return self._name
+#the health property to get the character's health
+    @property
+    def health(self):
+        return self._health
+#defining the setter for the health property to ensure it stays within the range of 0 to 100
+    @health.setter
+    def health(self, new_health):
+        if new_health < 0:
+            self._health = 0
+        elif new_health > 100:
+            self._health = 100
+        else:
+            self._health = new_health
+#the mana property to get the character's mana
+    @property
+    def mana(self):
+        return self._mana
+#defining the setter for the mana property to ensure it stays within the range of 0 to 50
+    @mana.setter
+    def mana(self, new_mana):
+        if new_mana < 0:
+            self._mana = 0
+        elif new_mana > 50:
+            self._mana = 50
+        else:
+            self._mana = new_mana
+#the level property to get the character's level
+    @property
+    def level(self):
+        return self._level
+#method to level up the character
+    def level_up(self):
+        self._level += 1
+        self.health = 100
+        self.mana = 50
+        print(f"{self.name} leveled up to {self._level}!")
+#method to display character stats
+    def __str__(self):
+        return (
+            f"Name: {self.name}\n"
+            f"Level: {self.level}\n"
+            f"Health: {self.health}\n"
+            f"Mana: {self.mana}"
+        )

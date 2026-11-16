@@ -1,0 +1,9 @@
+{
+    "python.REPL.enableREPLSmartSend": false,
+    "accessibility.signals.chatUserActionRequired": {
+        "sound": "off"
+    },
+    "accessibility.signals.chatResponseReceived": {
+        "sound": "off"
+    }
+}
